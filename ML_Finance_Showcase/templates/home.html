@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<!-- ---------------------------------------------------
+     PAGE HEADER
+     Contains the page title, favicon, and CSS stylesheet
+     used to style the interface.
+--------------------------------------------------- -->
+
+<head>
+
+<title>Finance ML App</title>
+
+<!-- Browser tab icon -->
+<link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}">
+
+<!-- Main stylesheet for layout and design -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<!-- ---------------------------------------------------
+     PAGE BODY
+     Main visible content of the webpage.
+--------------------------------------------------- -->
+
+<body>
+
+<!-- Main container that centers the content -->
+
+<div class="container">
+
+<!-- Glass-style card that holds the page information -->
+
+<div class="card">
+
+<h1>Personal Finance ML System</h1>
+
+<!-- Description of the project -->
+<p class="text-box">
+This application demonstrates how Machine Learning can classify expenses
+into essential and non-essential categories.
+</p>
+
+<!-- Navigation button to the ML demo page -->
+<a href="/FirstPage" class="btn-green">Go to Expense Classifier</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

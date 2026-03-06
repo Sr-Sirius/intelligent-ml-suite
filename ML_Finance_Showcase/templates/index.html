@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<!-- ---------------------------------------------------
+     PAGE HEADER
+     Contains the page title, favicon, and stylesheet
+     used to style the interface.
+--------------------------------------------------- -->
+
+<head>
+
+<title>Expense Classifier</title>
+
+<!-- Browser tab icon -->
+<link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}">
+
+<!-- Main CSS file used for layout and styling -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<!-- ---------------------------------------------------
+     PAGE BODY
+     Main visible content of the page where the user
+     interacts with the expense classifier demo.
+--------------------------------------------------- -->
+
+<body>
+
+<div class="container">
+
+
+<!-- ---------------------------------------------------
+     PAGE INTRODUCTION CARD
+     Introduces the expense classification system and
+     briefly explains the purpose of the page.
+--------------------------------------------------- -->
+
+<div class="card">
+
+<h1>Expense Category Classifier</h1>
+
+<p class="text-box">
+This page demonstrates how a Machine Learning model could classify expenses
+into <b>Essential</b> or <b>Non-Essential</b> categories.
+</p>
+
+</div>
+
+
+<!-- ---------------------------------------------------
+     MACHINE LEARNING MODEL EXPLANATION
+     Explains the problem, algorithm, inputs, and outputs
+     of the ML model used in this project.
+--------------------------------------------------- -->
+
+<div class="card">
+
+<h2>Machine Learning Model Explanation</h2>
+
+<p class="text-box"><b>Problem:</b> Many users overspend on non-essential purchases.</p>
+
+<p><b>Goal:</b> Automatically classify expenses to help users understand their spending behavior.</p>
+
+<h3>Algorithm</h3>
+
+<p class="text-box">
+This system uses <b>Logistic Regression</b>, a supervised machine learning algorithm
+used for <b>binary classification problems</b>.
+</p>
+
+<p class="text-box">
+Binary classification means the model predicts one of two possible outputs:
+</p>
+
+<ul>
+
+<li><b>Essential (1)</b></li>
+<li><b>Non-Essential (0)</b></li>
+
+</ul>
+
+<h3>Model Inputs</h3>
+
+<ul>
+
+<li>Amount</li>
+<li>Category</li>
+<li>Description (optional)</li>
+<li>Frequency</li>
+
+</ul>
+
+<h3>Model Output</h3>
+
+<p class="text-box">
+The model predicts whether the transaction should be considered
+<b>Essential</b> or <b>Non-Essential</b>.
+</p>
+
+<h3>Why this is useful</h3>
+
+<ul>
+
+<li>Applies machine learning classification</li>
+<li>Helps users understand spending behavior</li>
+<li>Can later support recommendation systems</li>
+
+</ul>
+
+</div>
+
+
+<!-- ---------------------------------------------------
+     EXPENSE INPUT SIMULATION
+     Form that allows the user to enter transaction
+     information to simulate a model prediction.
+--------------------------------------------------- -->
+
+<div class="card">
+
+<h2>Expense Classification Demo</h2>
+
+<p class="text-box">Enter a transaction and simulate a prediction.</p>
+
+<form id="expenseForm">
+
+<label>Amount ($)</label>
+<input type="number" id="amount" required>
+
+<br><br>
+
+<label>Category</label>
+<select id="category">
+
+<option>Food</option>
+<option>Transport</option>
+<option>Shopping</option>
+<option>Entertainment</option>
+<option>Utilities</option>
+
+</select>
+
+<br><br>
+
+<label>Description (optional)</label>
+<input type="text" id="description">
+
+<br><br>
+
+<label>Frequency</label>
+
+<select id="frequency">
+
+<option>Daily</option>
+<option>Weekly</option>
+<option>Monthly</option>
+<option>Occasional</option>
+
+</select>
+
+<br><br>
+
+<button type="submit" class="btn-green">
+Classify Expense
+</button>
+
+</form>
+
+</div>
+
+
+<!-- ---------------------------------------------------
+     PREDICTION OUTPUT SECTION
+     Displays the simulated prediction result after the
+     user submits the expense form.
+--------------------------------------------------- -->
+
+<div class="card" id="resultCard" style="display:none;">
+
+<h2>Prediction Result</h2>
+
+<p id="resultText"></p>
+
+</div>
+
+
+<!-- ---------------------------------------------------
+     VISUAL EXAMPLE SECTION
+     Displays an example image related to spending
+     behavior along with navigation back to the home page.
+--------------------------------------------------- -->
+
+<div class="card">
+
+<h2>Spending Behavior Example</h2>
+
+<img src="{{ url_for('static', filename='images/spongebob_money.png') }}" width="350">
+
+<p class="text-box">
+Example of a user spending a lot of money on non-essential purchases.
+</p>
+
+<a href="/" class="btn-green">Back to Home</a>
+
+</div>
+
+</div>
+
+
+<!-- ---------------------------------------------------
+     CLIENT-SIDE SCRIPT
+     Simulates the ML prediction by generating a random
+     result when the user submits the form.
+--------------------------------------------------- -->
+
+<script>
+
+document.getElementById("expenseForm").addEventListener("submit", function(event){
+
+event.preventDefault()
+
+let randomPrediction = Math.random()
+
+let resultCard = document.getElementById("resultCard")
+let resultText = document.getElementById("resultText")
+
+resultCard.style.display = "block"
+
+if(randomPrediction > 0.5){
+
+resultText.innerHTML = "<b>Prediction:</b> Essential Expense"
+
+}else{
+
+resultText.innerHTML = "<b>Prediction:</b> Non-Essential Expense"
+
+}
+
+})
+
+</script>
+
+</body>
+</html>
