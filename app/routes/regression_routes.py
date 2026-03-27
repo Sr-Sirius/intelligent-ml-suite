@@ -10,13 +10,23 @@ def regression_home():
 
 @regression_bp.route('/predict', methods=['GET', 'POST'])
 def predict():
+
     prediction = None
+    warning = None
 
     if request.method == 'POST':
         income = float(request.form['income'])
-        previous_expenses = float(request.form['previous_expenses'])
+        previous = float(request.form['previous_expenses'])
         transactions = float(request.form['transactions'])
 
-        prediction = predict_expense(income, previous_expenses, transactions)
+        # Validation
+        if previous > income:
+            warning = "Warning: Previous expenses are higher than income. Prediction may be inaccurate."
 
-    return render_template('regression/predict.html', prediction=prediction)
+        prediction = predict_expense(income, previous, transactions)
+
+    return render_template(
+        'regression/predict.html',
+        prediction=prediction,
+        warning=warning
+    )
