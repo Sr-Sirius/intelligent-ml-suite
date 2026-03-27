@@ -1,9 +1,11 @@
+import matplotlib
+matplotlib.use('Agg')
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import io
 import base64
 from sklearn.linear_model import LinearRegression
-
 
 # Load dataset
 data = pd.read_csv("data/finance_data.csv", delimiter=";")
