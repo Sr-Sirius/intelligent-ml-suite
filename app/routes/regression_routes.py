@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from app.models.linear_regression_model import predict_expense, generate_plot
+from app.models.regression.linear_regression_model import predict_expense, generate_plot
 
 regression_bp = Blueprint('regression', __name__)
 
