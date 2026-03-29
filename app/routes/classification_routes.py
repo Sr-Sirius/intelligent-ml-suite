@@ -10,7 +10,7 @@ classification_bp = Blueprint(
 def logistic_concepts():
     return render_template(
         "ml/classification/logistic/concepts.html",
-        theme="ml"
+        theme="cars"
     )
 
 
@@ -19,7 +19,7 @@ def logistic_concepts():
 def logistic_application():
     return render_template(
         "ml/classification/logistic/application.html",
-        theme="ml"
+        theme="cars"
     )
 
 # Naive Bayes - Concepts
@@ -27,7 +27,7 @@ def logistic_application():
 def nb_concepts():
     return render_template(
         "ml/classification/naive_bayes/concepts.html",
-        theme="ml"
+        theme="cars"
     )
 
 
@@ -36,5 +36,5 @@ def nb_concepts():
 def nb_application():
     return render_template(
         "ml/classification/naive_bayes/application.html",
-        theme="ml"
+        theme="cars"
     )
