@@ -1,7 +1,16 @@
 from flask import Blueprint, render_template
 
-main = Blueprint("main", __name__)
+main_bp = Blueprint(
+    "main",
+    __name__,
+    template_folder="../templates"
+)
 
-@main.route("/")
+@main_bp.route("/")
 def home():
-    return render_template("home.html")
+    return render_template("home.html", theme="ml")
+
+
+@main_bp.route("/ml")
+def ml_menu():
+    return render_template("ml/menu.html", theme="ml")

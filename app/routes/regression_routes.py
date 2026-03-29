@@ -6,7 +6,11 @@ regression_bp = Blueprint('regression', __name__)
 @regression_bp.route('/')
 def regression_home():
     plot = generate_plot()
-    return render_template('regression/info.html', plot=plot)
+    return render_template(
+        'ml/regression/info.html',
+        plot=plot,
+        theme="finance"
+    )
 
 
 @regression_bp.route('/predict', methods=['GET', 'POST'])
@@ -28,8 +32,9 @@ def predict():
         prediction = predict_expense(income, previous, transactions)
 
     return render_template(
-        'regression/predict.html',
+        'ml/regression/predict.html',
         prediction=prediction,
         warning=warning,
-        plot=plot
+        plot=plot,
+        theme="finance"
     )
