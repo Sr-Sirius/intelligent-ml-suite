@@ -14,9 +14,9 @@
     <div class="card">
         <h2>What is Logistic Regression?</h2>
         <div class="text-box">
-            Logistic Regression is a <strong>supervised learning</strong> algorithm used for 
-            <strong>classification problems</strong>. It predicts the probability that an input belongs 
-            to a specific class, typically using a binary outcome such as 0 or 1.
+            <p>Logistic Regression is a supervised machine learning algorithm used for solving classification problems, particularly when the output variable is categorical. Despite its name, it is not used for regression tasks but for predicting the probability that an input belongs to a specific class.</p>
+            <p>The model applies a mathematical function called the sigmoid function, which transforms any real-valued number into a value between 0 and 1. This allows the model to interpret outputs as probabilities, making it suitable for decision-making scenarios.</p>
+            <p>Logistic Regression is widely used due to its simplicity, interpretability, and effectiveness in binary classification problems.</p>
         </div>
 
         <div class="image-box">
@@ -28,9 +28,9 @@
     <div class="card">
         <h2>Regression vs Classification</h2>
         <div class="text-box">
-            In <strong>regression</strong>, the output is a continuous value (e.g., price or temperature).  
-            In <strong>classification</strong>, the output is a category or class label (e.g., spam or not spam).  
-            Logistic Regression is used for classification, even though its name includes "regression".
+            <p>In machine learning, it is important to distinguish between regression and classification tasks.</p>
+            <p>Regression models are used to predict continuous numerical values, such as predicting house prices or temperature. In contrast, classification models are used to predict discrete categories or labels, such as whether an email is spam or not.</p>
+            <p>Logistic Regression belongs to the classification category because its objective is to assign inputs to predefined classes rather than predicting continuous outputs.</p>
         </div>
 
         <div class="image-box">
@@ -42,11 +42,13 @@
     <div class="card">
         <h2>Binary Classification</h2>
         <div class="text-box">
-            Logistic Regression is commonly used for <strong>binary classification</strong>, where there are only two possible outcomes:
+            <p>Binary classification refers to problems where there are only two possible outcomes. These outcomes are typically represented as 0 and 1.</p>
+            <p>For example:</p>
             <ul>
-                <li>Class 0 (e.g., No Fraud)</li>
-                <li>Class 1 (e.g., Fraud)</li>
+                <li> 0 (e.g., No Fraud)</li>
+                <li> 1 (e.g., Fraud)</li>
             </ul>
+            <p>Logistic Regression is specifically designed to handle binary classification by estimating the probability that a given input belongs to one of these two classes. Based on this probability, the model assigns the final class label.</p>
         </div>
 
         <div class="image-box">
@@ -58,8 +60,13 @@
     <div class="card">
         <h2>Target Variable / Class Label</h2>
         <div class="text-box">
-            The <strong>target variable</strong> is the output the model is trying to predict.  
-            In classification problems, this is also called the <strong>class label</strong>, such as "fraud" or "not fraud".
+            <p>The target variable (also known as the class label) is the output that the model is trying to predict.</p>
+            <p>In classification problems, the target variable represents categories rather than numerical values. For example, in a fraud detection system, the target variable could be:</p>
+            <ul>
+                <li> Fraud (1) </li>
+                <li> Not Fraud (0) </li>
+            </ul>
+            <p>The model learns patterns from input data to accurately predict this target variable.</p>
         </div>
 
         <div class="image-box">
@@ -71,8 +78,9 @@
     <div class="card">
         <h2>Features / Predictors</h2>
         <div class="text-box">
-            <strong>Features</strong> (or predictors) are the input variables used by the model to make predictions.  
-            These can include numerical or categorical data such as age, income, or transaction amount.
+            <p>Features, also called predictors, are the input variables used by the model to make predictions.</p>
+            <p>These variables provide the information necessary for the model to identify patterns and relationships within the data. Features can include numerical values (such as age or income) or categorical values (such as location or product type).</p>
+            <p>The quality and relevance of features directly influence the performance of the model.</p>
         </div>
 
         <div class="image-box">
@@ -84,8 +92,9 @@
     <div class="card">
         <h2>Probability Estimation</h2>
         <div class="text-box">
-            Logistic Regression predicts a <strong>probability value between 0 and 1</strong>.  
-            This value represents how likely an input belongs to a specific class.
+            <p>One of the key characteristics of Logistic Regression is that it outputs a probability value between 0 and 1.</p>
+            <p>This probability represents how likely it is that a given input belongs to a particular class. For example, a prediction of 0.85 indicates an 85% probability that the input belongs to class 1.</p>
+            <p>This probabilistic approach allows for flexible decision-making and interpretation of results.</p>
         </div>
 
         <div class="image-box">
@@ -97,8 +106,9 @@
     <div class="card">
         <h2>Decision Boundary</h2>
         <div class="text-box">
-            The <strong>decision boundary</strong> is the threshold that separates different classes.  
-            It determines how the model classifies input data based on predicted probabilities.
+            <p>The decision boundary is the point or line that separates different classes in the feature space.</p>
+            <p>In Logistic Regression, this boundary is determined based on the predicted probabilities. It defines the threshold at which the model switches from predicting one class to another.</p>
+            <p>For example, if the decision boundary is set at 0.5, values above this threshold are classified as one class, while values below are classified as another.</p>
         </div>
 
         <div class="image-box">
@@ -110,11 +120,13 @@
     <div class="card">
         <h2>Classification Threshold</h2>
         <div class="text-box">
-            The <strong>classification threshold</strong> is typically set at 0.5:
+            <p>The classification threshold is the value used to convert predicted probabilities into class labels.</p>
+            <p>Typically, this threshold is set at 0.5:</p>
             <ul>
-                <li>If probability ≥ 0.5 → Class 1</li>
-                <li>If probability < 0.5 → Class 0</li>
+                <li> If probability more or equalt to 0.5 → Class 1 </li>
+                <li> If probability less than 0.5 → Class 0 </li>
             </ul>
+            <p>However, this threshold can be adjusted depending on the problem. For example, in fraud detection, a lower threshold may be used to reduce the risk of missing fraudulent transactions.</p>
         </div>
 
         <div class="image-box">
@@ -126,12 +138,19 @@
     <div class="card">
         <h2>Real-World Example</h2>
         <div class="text-box">
-            Logistic Regression is widely used in applications such as fraud detection, medical diagnosis, 
-            and spam filtering, where decisions must be made between two categories.
+            <p>Logistic Regression is widely used in real-world applications where binary decisions are required.</p>
+            <p>Examples include:</p>
+            <ul>
+                <li> Fraud detection in banking systems  </li>
+                <li> Medical diagnosis (disease vs no disease)  </li>
+                <li> Spam email filtering  </li>
+                <li> Credit approval systems  </li>
+            </ul>
+            <p>Its ability to provide both predictions and probabilities makes it a powerful and interpretable tool in many industries.</p>
         </div>
 
         <div class="image-box">
-            <img src="{{ url_for('static', filename='images/real_world.png') }}" width="300">
+            <img src="{{ url_for('static', filename='images/real_world_logistic.png') }}" width="300">
         </div>
     </div>
 
