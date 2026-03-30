@@ -1,5 +1,147 @@
 {% extends "base.html" %}
 
+{% block title %}Logistic Regression - Concepts{% endblock %}
+
 {% block content %}
-<h1>Page working</h1>
+
+<div class="container">
+
+    <div class="card">
+        <h1>Logistic Regression - Basic Concepts</h1>
+    </div>
+
+    <!-- WHAT IS LOGISTIC REGRESSION -->
+    <div class="card">
+        <h2>What is Logistic Regression?</h2>
+        <div class="text-box">
+            Logistic Regression is a <strong>supervised learning</strong> algorithm used for 
+            <strong>classification problems</strong>. It predicts the probability that an input belongs 
+            to a specific class, typically using a binary outcome such as 0 or 1.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/logistic_intro.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- REGRESSION VS CLASSIFICATION -->
+    <div class="card">
+        <h2>Regression vs Classification</h2>
+        <div class="text-box">
+            In <strong>regression</strong>, the output is a continuous value (e.g., price or temperature).  
+            In <strong>classification</strong>, the output is a category or class label (e.g., spam or not spam).  
+            Logistic Regression is used for classification, even though its name includes "regression".
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/reg_vs_class.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- BINARY CLASSIFICATION -->
+    <div class="card">
+        <h2>Binary Classification</h2>
+        <div class="text-box">
+            Logistic Regression is commonly used for <strong>binary classification</strong>, where there are only two possible outcomes:
+            <ul>
+                <li>Class 0 (e.g., No Fraud)</li>
+                <li>Class 1 (e.g., Fraud)</li>
+            </ul>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/binary.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- TARGET VARIABLE -->
+    <div class="card">
+        <h2>Target Variable / Class Label</h2>
+        <div class="text-box">
+            The <strong>target variable</strong> is the output the model is trying to predict.  
+            In classification problems, this is also called the <strong>class label</strong>, such as "fraud" or "not fraud".
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/target.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="card">
+        <h2>Features / Predictors</h2>
+        <div class="text-box">
+            <strong>Features</strong> (or predictors) are the input variables used by the model to make predictions.  
+            These can include numerical or categorical data such as age, income, or transaction amount.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/features.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- PROBABILITY -->
+    <div class="card">
+        <h2>Probability Estimation</h2>
+        <div class="text-box">
+            Logistic Regression predicts a <strong>probability value between 0 and 1</strong>.  
+            This value represents how likely an input belongs to a specific class.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/probability.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- DECISION BOUNDARY -->
+    <div class="card">
+        <h2>Decision Boundary</h2>
+        <div class="text-box">
+            The <strong>decision boundary</strong> is the threshold that separates different classes.  
+            It determines how the model classifies input data based on predicted probabilities.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/decision_boundary.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- THRESHOLD -->
+    <div class="card">
+        <h2>Classification Threshold</h2>
+        <div class="text-box">
+            The <strong>classification threshold</strong> is typically set at 0.5:
+            <ul>
+                <li>If probability ≥ 0.5 → Class 1</li>
+                <li>If probability < 0.5 → Class 0</li>
+            </ul>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/threshold.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- REAL WORLD -->
+    <div class="card">
+        <h2>Real-World Example</h2>
+        <div class="text-box">
+            Logistic Regression is widely used in applications such as fraud detection, medical diagnosis, 
+            and spam filtering, where decisions must be made between two categories.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/real_world.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- BACK BUTTON -->
+    <div class="home-buttons">
+        <a href="{{ url_for('main.ml_menu') }}" class="btn">
+            ⬅ Back to ML Menu
+        </a>
+    </div>
+
+</div>
+
 {% endblock %}
