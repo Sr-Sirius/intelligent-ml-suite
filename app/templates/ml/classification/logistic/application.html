@@ -1,5 +1,134 @@
 {% extends "base.html" %}
 
+{% block title %}Logistic Regression - Application{% endblock %}
+
 {% block content %}
-<h1>Page working</h1>
+
+<div class="container">
+
+    <div class="card">
+        <h1>Logistic Regression - Application</h1>
+    </div>
+
+    <!-- PROBLEM -->
+    <div class="card">
+        <h2>Problem Description</h2>
+        <div class="text-box">
+            This application aims to predict whether a transaction is fraudulent or legitimate using a classification model.
+        </div>
+    </div>
+
+    <!-- DATASET -->
+    <div class="card">
+        <h2>Dataset Explanation</h2>
+        <div class="text-box">
+            The dataset contains transaction-related information such as amount, frequency, and other behavioral patterns. 
+            It is structured to allow the model to learn patterns associated with fraudulent activities.
+        </div>
+    </div>
+
+    <!-- VARIABLES -->
+    <div class="card">
+        <h2>Input Variables and Target Variable</h2>
+        <div class="text-box">
+            <ul>
+                <li><strong>Input variables:</strong> transaction amount, frequency, time</li>
+                <li><strong>Target variable:</strong> fraud (1) or not fraud (0)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- DATA PREP -->
+    <div class="card">
+        <h2>Data Preparation</h2>
+        <div class="text-box">
+            The dataset is cleaned and preprocessed by removing missing values, normalizing numerical data, 
+            and splitting the data into training and testing sets.
+        </div>
+    </div>
+
+    <!-- TRAINING -->
+    <div class="card">
+        <h2>Model Training Process</h2>
+        <div class="text-box">
+            A Logistic Regression model is trained using labeled data. The model learns relationships 
+            between input features and the target variable to make accurate predictions.
+        </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="card">
+        <h2>Prediction Form</h2>
+
+        <form method="POST">
+            <input type="number" step="any" name="amount" placeholder="Transaction Amount" required>
+            <input type="number" step="any" name="frequency" placeholder="Transaction Frequency" required>
+            <input type="number" step="any" name="time" placeholder="Transaction Time" required>
+
+            <button type="submit" class="btn">Predict</button>
+        </form>
+
+        {% if prediction is not none %}
+            <div class="text-box">
+                <strong>Prediction:</strong> {{ prediction }}
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- CONFUSION MATRIX -->
+    <div class="card">
+        <h2>Confusion Matrix</h2>
+        <div class="text-box">
+            The confusion matrix shows how well the model classifies data into correct and incorrect predictions.
+        </div>
+
+        {% if cm_plot %}
+            <img src="data:image/png;base64,{{ cm_plot }}">
+        {% endif %}
+    </div>
+
+    <!-- METRICS -->
+    <div class="card">
+        <h2>Model Evaluation Metrics</h2>
+
+        <div class="text-box">
+            <ul>
+                <li><strong>Accuracy:</strong> {{ accuracy }}</li>
+                <li><strong>Precision:</strong> {{ precision }}</li>
+                <li><strong>Recall:</strong> {{ recall }}</li>
+                <li><strong>F1-score:</strong> {{ f1 }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ROC -->
+    <div class="card">
+        <h2>ROC Curve / AUC</h2>
+        <div class="text-box">
+            The ROC curve shows the trade-off between true positive rate and false positive rate.
+        </div>
+
+        {% if roc_plot %}
+            <img src="data:image/png;base64,{{ roc_plot }}">
+        {% endif %}
+    </div>
+
+    <!-- INTERPRETATION -->
+    <div class="card">
+        <h2>Interpretation of Results</h2>
+        <div class="text-box">
+            The evaluation metrics indicate how well the model performs in detecting fraudulent transactions. 
+            A high recall ensures most fraud cases are detected, while precision ensures fewer false alarms.
+        </div>
+    </div>
+
+    <!-- BACK -->
+    <div class="home-buttons">
+        <a href="{{ url_for('main.ml_menu') }}" class="btn">
+            ⬅ Back to ML Menu
+        </a>
+    </div>
+
+</div>
+
 {% endblock %}
