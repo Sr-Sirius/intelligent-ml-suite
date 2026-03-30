@@ -1,5 +1,108 @@
 {% extends "base.html" %}
 
+{% block title %}Naive Bayes - Concepts{% endblock %}
+
 {% block content %}
-<h1>Page working</h1>
+
+<div class="container">
+
+    <div class="card">
+        <h1>Bernoulli Naive Bayes - Basic Concepts</h1>
+    </div>
+
+    <!-- WHAT IS NAIVE BAYES -->
+    <div class="card">
+        <h2>What is Bernoulli Naive Bayes?</h2>
+        <div class="text-box">
+            <p>Bernoulli Naive Bayes is a supervised machine learning algorithm used for classification tasks, particularly when the input features are binary (0 or 1). It is based on Bayes' Theorem, which calculates the probability of a class given a set of input features.</p>
+            <p>This model assumes that all features are independent of each other given the class label, which simplifies computation and allows for efficient classification.</p>
+            <p>It is widely used in problems where features represent the presence or absence of certain characteristics.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/naive_intro.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="card">
+        <h2>How it Works</h2>
+        <div class="text-box">
+            <p>The model applies Bayes' Theorem to calculate the probability of each class given the observed features.</p>
+            <p>It multiplies the probabilities of each feature assuming independence between them. For Bernoulli Naive Bayes, each feature contributes based on whether it is present (1) or absent (0).</p>
+            <p>The class with the highest probability is selected as the final prediction.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/bayes_formula.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- MAIN CHARACTERISTICS -->
+    <div class="card">
+        <h2>Main Characteristics</h2>
+        <div class="text-box">
+            <p>Bernoulli Naive Bayes operates on binary-valued features and assumes independence between variables. It is computationally efficient and performs well even with relatively small datasets.</p>
+            <p>The model is simple, fast, and easy to interpret, making it a strong baseline for many classification problems.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/binary_features.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- ADVANTAGES -->
+    <div class="card">
+        <h2>Advantages and Limitations</h2>
+        <div class="text-box">
+            <p>One of the main advantages of Bernoulli Naive Bayes is its simplicity and speed. It works well with high-dimensional data and requires less computational power compared to more complex models.</p>
+            <p>However, its main limitation is the strong assumption that features are independent, which is rarely true in real-world scenarios. Additionally, it is not suitable for continuous data unless it is converted into binary form.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/advantages.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- TYPE OF PROBLEMS -->
+    <div class="card">
+        <h2>Type of Classification Problems</h2>
+        <div class="text-box">
+            <p>This model is commonly used in binary classification problems where features represent the presence or absence of conditions.</p>
+            <p>Examples include spam detection, sentiment analysis, and behavior classification tasks.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/classification.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- REAL WORLD -->
+    <div class="card">
+        <h2>Real-World Example</h2>
+        <div class="text-box">
+            <p>In a driving risk analysis system, Bernoulli Naive Bayes can be used to classify whether a driver is high risk based on binary behaviors such as:</p>
+            <ul>
+                <li> Overspeeding (Yes/No) </li>
+                <li> Night driving (Yes/No) </li>
+                <li> Phone usage while driving (Yes/No) </li>
+                <li> Aggressive braking (Yes/No) </li>
+            </ul>
+            <p>These binary indicators are used by the model to estimate the probability of risky driving behavior.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/real_world_nb.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- BACK BUTTON -->
+    <div class="home-buttons">
+        <a href="{{ url_for('main.ml_menu') }}" class="btn">
+            ⬅ Back to ML Menu
+        </a>
+    </div>
+
+</div>
+
 {% endblock %}

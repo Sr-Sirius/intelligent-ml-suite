@@ -1,5 +1,155 @@
 {% extends "base.html" %}
 
+{% block title %}Naive Bayes - Application{% endblock %}
+
 {% block content %}
-<h1>Page working</h1>
+
+<div class="container">
+
+    <div class="card">
+        <h1>Bernoulli Naive Bayes - Application</h1>
+    </div>
+
+    <!-- PROBLEM -->
+    <div class="card">
+        <h2>Problem Description</h2>
+        <div class="text-box">
+            This application aims to classify the risk level of a driver based on observable driving behaviors. 
+            Instead of using continuous values, this model evaluates whether certain risky behaviors are present or absent, 
+            such as overspeeding or phone usage while driving.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/car_behavior_problem.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- DATASET -->
+    <div class="card">
+        <h2>Dataset Explanation</h2>
+        <div class="text-box">
+            The dataset is composed of binary variables representing driver behaviors. 
+            Each feature indicates whether a risky action occurred (1) or not (0). 
+            The target variable represents whether the driver is classified as high risk or low risk.
+        </div>
+    </div>
+
+    <!-- VARIABLES -->
+    <div class="card">
+        <h2>Input Variables and Target Variable</h2>
+        <div class="text-box">
+            <ul>
+                <li><strong>Input variables:</strong> overspeeding, night driving, phone usage, aggressive braking</li>
+                <li><strong>Target variable:</strong> accident risk (1 = high risk, 0 = low risk)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- DATA PREP -->
+    <div class="card">
+        <h2>Data Preparation</h2>
+        <div class="text-box">
+            The dataset is structured using binary encoding, where each feature represents the presence (1) or absence (0) of a behavior. 
+            The data is then split into training and testing sets to evaluate the model’s performance.
+        </div>
+    </div>
+
+    <!-- TRAINING -->
+    <div class="card">
+        <h2>Model Training Process</h2>
+        <div class="text-box">
+            A Bernoulli Naive Bayes model is trained using labeled data. 
+            The algorithm calculates the probability of each class given the observed features, 
+            assuming independence between them. It then selects the class with the highest probability.
+        </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="card">
+        <h2>Prediction Form</h2>
+
+        <form method="POST">
+            <input type="number" name="overspeeding" min="0" max="1" placeholder="Overspeeding (0 or 1)" required>
+            <input type="number" name="night" min="0" max="1" placeholder="Night Driving (0 or 1)" required>
+            <input type="number" name="phone" min="0" max="1" placeholder="Phone Usage (0 or 1)" required>
+            <input type="number" name="braking" min="0" max="1" placeholder="Aggressive Braking (0 or 1)" required>
+
+            <button type="submit" class="btn">Predict</button>
+        </form>
+
+        {% if prediction is not none %}
+           <div class="text-box">
+                <strong>Prediction:</strong> {{ prediction }} <br>
+                <strong>Probability:</strong> {{ (probability * 100) | round(2) }}%
+           </div>
+        {% endif %}
+    </div>
+
+    <!-- CONFUSION MATRIX -->
+    <div class="card">
+        <h2>Confusion Matrix</h2>
+        <div class="text-box">
+            The confusion matrix shows how well the model classifies driver behavior into correct and incorrect predictions.
+        </div>
+
+        {% if cm_plot %}
+            <img src="data:image/png;base64,{{ cm_plot }}">
+        {% endif %}
+        <p class="subtitle">
+            This visualization helps evaluate the model's classification performance.
+        </p>
+    </div>
+
+    <!-- METRICS -->
+    <div class="card">
+        <h2>Model Evaluation Metrics</h2>
+
+        <div class="text-box">
+            <ul>
+                <li><strong>Accuracy:</strong> {{ accuracy * 100 }}%</li>
+                <li><strong>Precision:</strong> {{ precision * 100 }}%</li>
+                <li><strong>Recall:</strong> {{ recall * 100 }}%</li>
+                <li><strong>F1-score:</strong> {{ f1 * 100 }}%</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ROC -->
+    <div class="card">
+        <h2>ROC Curve / AUC</h2>
+        <div class="text-box">
+            The ROC curve illustrates the model’s ability to distinguish between high-risk and low-risk drivers.
+        </div>
+
+        {% if roc_plot %}
+            <img src="data:image/png;base64,{{ roc_plot }}">
+        {% endif %}
+        <p class="subtitle">
+            This visualization helps evaluate the model's classification performance.
+        </p>
+    </div>
+
+    <!-- INTERPRETATION -->
+    <div class="card">
+        <h2>Interpretation of Results</h2>
+        <div class="text-box">  
+        <p>The Bernoulli Naive Bayes model demonstrates solid performance in classifying driver risk based on binary behavior indicators. The accuracy reflects the model’s ability to correctly classify both high-risk and low-risk drivers.</p>
+
+        <p>Precision indicates that when the model predicts a driver as high risk, it is usually correct. Recall shows that the model successfully identifies most of the actual high-risk drivers, which is critical in safety-related applications.</p>
+
+        <p>The confusion matrix reveals some classification errors, which is expected due to the simplicity of the model and the independence assumption. Despite this, the model provides reliable and interpretable predictions.</p>
+
+        <p>The ROC curve and AUC value confirm that the model maintains a good balance between sensitivity and specificity, making it a strong baseline classifier for binary behavioral data.</p>
+        </div>
+    </div>
+
+    <!-- BACK -->
+    <div class="home-buttons">
+        <a href="{{ url_for('main.ml_menu') }}" class="btn">
+            ⬅ Back to ML Menu
+        </a>
+    </div>
+
+</div>
+
 {% endblock %}
