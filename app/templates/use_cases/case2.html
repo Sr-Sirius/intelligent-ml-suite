@@ -4,55 +4,66 @@
 
 {% block content %}
 
-<div class="card">
+<div class="container">
 
-    <h1>Use Case 2: Fraud Detection</h1>
-
-    <div class="text-box">
-
-        <p>
-            Fraud detection is one of the most important applications of Machine Learning in the financial industry.
-            This system analyzes transaction patterns to identify unusual or suspicious behavior that could indicate fraud.
-        </p>
-
-        <h3>Machine Learning Type</h3>
-        <p>Supervised Learning - Classification</p>
-
-        <h3>Input Data</h3>
-        <ul>
-            <li>Transaction amount</li>
-            <li>Location of transaction</li>
-            <li>Time of transaction</li>
-            <li>User transaction history</li>
-        </ul>
-
-        <h3>Expected Output</h3>
-        <p>
-            The model classifies transactions as either "Fraudulent" or "Legitimate".
-        </p>
-
-        <h3>How it Works</h3>
-        <p>
-            The model is trained using historical transaction data where each operation is labeled as fraud or not.
-            It learns patterns such as unusual spending locations, abnormal transaction amounts, or unexpected behavior.
-            When a new transaction occurs, the model compares it with learned patterns and determines the probability of fraud.
-        </p>
-
-        <h3>Real-world Importance</h3>
-        <p>
-            This system is widely used in banking and financial platforms to protect users from unauthorized transactions,
-            reduce financial losses, and increase trust in digital payment systems.
-        </p>
-
+    <div class="card">
+        <h1>Fraud Detection in Financial Transactions</h1>
     </div>
 
-    <div class="image-box">
-        <img src="{{ url_for('static', filename='images/fraud_detection.png') }}" width="300">
+    <div class="card">
+        <h2>Problem Description</h2>
+        <div class="text-box">
+            Financial fraud is a growing concern in digital transactions, where unauthorized activities can result in significant financial losses. Detecting fraudulent transactions in real time is essential for protecting users and financial institutions.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/fraud_problem.png') }}" width="300">
+        </div>
     </div>
 
-    <br>
-    <a href="/use-cases/" class="btn-green">Back</a>
+    <div class="card">
+        <h2>Type of Machine Learning</h2>
+        <div class="text-box">
+            This is a supervised learning classification problem, where the model predicts whether a transaction is fraudulent or legitimate.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/fraud_ml_type.png') }}" width="300">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Input Data</h2>
+        <div class="text-box">
+            The model uses features such as transaction amount, location, time, and transaction frequency to identify suspicious patterns.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/fraud_input.png') }}" width="300">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Expected Output</h2>
+        <div class="text-box">
+            The output is a binary classification indicating whether a transaction is fraudulent or legitimate.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/fraud_output.png') }}" width="300">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Real-World Relevance</h2>
+        <div class="text-box">
+            Financial institutions use machine learning models to detect fraud in real time, improving security and reducing financial losses.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/fraud_real.png') }}" width="300">
+        </div>
+    </div>
 
 </div>
-
 {% endblock %}
