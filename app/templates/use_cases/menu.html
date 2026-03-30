@@ -4,24 +4,28 @@
 
 {% block content %}
 
-<div class="card">
+<div class="container">
 
-    <h1>Machine Learning Use Cases</h1>
+    <div class="card">
 
-    <p class="text-box">
-        Explore how Machine Learning can be applied in personal finance.
-    </p>
+        <h1>Machine Learning Use Cases</h1>
 
-    <div class="image-box">
-        <img src="{{ url_for('static', filename='images/spongebob_money.png') }}" width="300">
+        <p class="subtitle">
+            Explore real-world applications of Machine Learning across different industries.
+        </p>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/ml_cases.png') }}" width="200">
+        </div>
+
+        <div class="home-buttons">
+            <a href="/use-cases/case1" class="btn">Finance Prediction</a>
+            <a href="/use-cases/case2" class="btn">Fraud Detection</a>
+            <a href="/use-cases/case3" class="btn">Healthcare Risk</a>
+            <a href="/use-cases/case4" class="btn">Car Analysis</a>
+        </div>
+
     </div>
-
-    <br>
-
-    <a href="/use-cases/case1" class="btn-green">Expense Prediction</a><br>
-    <a href="/use-cases/case2" class="btn-green">Fraud Detection</a><br>
-    <a href="/use-cases/case3" class="btn-green">Spending Classification</a><br>
-    <a href="/use-cases/case4" class="btn-green">Budget Recommendation</a><br>
 
 </div>
 

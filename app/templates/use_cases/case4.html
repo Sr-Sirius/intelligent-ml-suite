@@ -4,54 +4,93 @@
 
 {% block content %}
 
-<div class="card">
+<div class="container">
 
-    <h1>Use Case 4: Budget Recommendation</h1>
-
-    <div class="text-box">
-
-        <p>
-            Budget recommendation systems use Machine Learning to suggest optimal spending limits
-            based on a user's financial behavior and goals.
-        </p>
-
-        <h3>Machine Learning Type</h3>
-        <p>Regression / Recommendation System</p>
-
-        <h3>Input Data</h3>
-        <ul>
-            <li>User income</li>
-            <li>Historical expenses</li>
-            <li>Savings goals</li>
-            <li>Spending patterns</li>
-        </ul>
-
-        <h3>Expected Output</h3>
-        <p>
-            Personalized recommendations for how much a user should spend in different categories.
-        </p>
-
-        <h3>How it Works</h3>
-        <p>
-            The model analyzes past financial data and identifies patterns in spending behavior.
-            Using regression techniques, it estimates optimal budget allocations and predicts
-            future financial scenarios based on current habits.
-        </p>
-
-        <h3>Real-world Importance</h3>
-        <p>
-            This helps users achieve financial goals, avoid overspending, and maintain better control
-            over their personal finances through intelligent recommendations.
-        </p>
-
+    <div class="card">
+        <h1>Car Price and Risk Analysis</h1>
     </div>
 
-    <div class="image-box">
-        <img src="{{ url_for('static', filename='images/budget_recommendation.png') }}" width="300">
+    <div class="card">
+        <h2>Problem Description</h2>
+        <div class="text-box">
+            In the automotive industry, determining the value or risk associated with a vehicle is essential for buyers, sellers, and insurers. Accurately predicting car prices or assessing risk factors helps improve decision-making and market transparency.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/car_problem.png') }}" width="300">
+        </div>
     </div>
 
-    <br>
-    <a href="/use-cases/" class="btn-green">Back</a>
+    <div class="card">
+        <h2>Type of Machine Learning</h2>
+        <div class="text-box">
+             <p>This use case can involve:</p>
+
+            <ul>
+                <li><strong>Regression →</strong>to predict car prices</li>
+                <li><strong>Classification →</strong>to determine risk level (e.g., high-risk vs low-risk vehicle)</li>
+            </ul>
+           
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/ml_type.png') }}" width="300">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Input Data</h2>
+        <div class="text-box">
+            <p>Relevant features include:</p>
+
+            <ul>
+                <li><strong>Car age</strong></li>
+                <li><strong>Mileage</strong></li>
+                <li><strong>Engine size</strong></li>
+                <li><strong>Brand and model</strong></li>
+                <li><strong>Maintenance history</strong></li>
+            </ul>
+          
+             <p>These variables influence both price and risk.</p> 
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/car_input.png') }}" width="300">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Expected Output</h2>
+        <div class="text-box">
+            <p>Depending on the model:</p>
+
+            <ul>
+                <li><strong>Predicted car price</strong> (regression)</li>
+                <li><strong>Risk category</strong>(classification)</li>
+            </ul>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/car_output.png') }}" width="300">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Real-World Relevance</h2>
+        <div class="text-box">
+            Car dealerships, insurance companies, and online marketplaces use machine learning to estimate vehicle value and assess risk. This improves pricing accuracy and helps customers make better purchasing decisions.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/car_real.png') }}" width="300">
+        </div>
+    </div>
+
+     <div class="home-buttons">
+        <a href="{{ url_for('use_cases.menu') }}" class="btn">
+            ⬅ Back to Use Cases
+        </a>
+    </div>
 
 </div>
 

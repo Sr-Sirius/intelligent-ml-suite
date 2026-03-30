@@ -4,57 +4,80 @@
 
 {% block content %}
 
-<div class="card">
+<div class="container">
 
-    <h1>Use Case 1: Expense Prediction</h1>
-
-    <div class="text-box">
-
-        <p>
-            Expense prediction is a fundamental application of Machine Learning in personal finance.
-            This system estimates future expenses based on historical financial data, allowing users
-            to better understand their spending behavior and plan their budgets more effectively.
-        </p>
-
-        <h3>Machine Learning Type</h3>
-        <p>Supervised Learning - Linear Regression</p>
-
-        <h3>Input Data</h3>
-        <ul>
-            <li>Monthly income</li>
-            <li>Previous expenses</li>
-            <li>Spending habits</li>
-            <li>Number of transactions</li>
-        </ul>
-
-        <h3>Expected Output</h3>
-        <p>
-            A numerical prediction representing the estimated future monthly expenses of the user.
-        </p>
-
-        <h3>How it Works</h3>
-        <p>
-            The model is trained using historical financial data where both inputs (such as income and past expenses)
-            and outputs (actual expenses) are known. Using linear regression, the model learns the relationship between
-            these variables and identifies patterns in spending behavior.
-            Once trained, the model can take new input data and generate a prediction by applying the learned mathematical relationship.
-        </p>
-
-        <h3>Real-world Importance</h3>
-        <p>
-            This type of system is widely used in financial applications to help users forecast their expenses,
-            avoid overspending, and make informed financial decisions. It is especially useful for budgeting,
-            savings planning, and long-term financial stability.
-        </p>
-
+    <div class="card">
+        <h1>Personal Finance Prediction</h1>
     </div>
 
-    <div class="image-box">
-        <img src="{{ url_for('static', filename='images/expense_prediction.png') }}" width="300">
+    <div class="card">
+        <h2>Problem Description</h2>
+        <div class="text-box">
+            Personal financial management is a critical aspect of everyday life, yet many individuals struggle to predict their future expenses accurately. Unexpected spending patterns and poor budgeting decisions can lead to financial instability. This use case focuses on predicting future expenses based on historical financial data, helping users make informed budgeting decisions.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/finance_problem.png') }}" width="300">
+        </div>
     </div>
 
-    <br>
-    <a href="/use-cases/" class="btn-green">Back</a>
+    <div class="card">
+        <h2>Type of Machine Learning</h2>
+        <div class="text-box">
+            This problem is addressed using supervised learning, specifically a regression model. Regression is suitable because the goal is to predict a continuous numerical value (future expenses) based on input variables.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/ml_type.png') }}" width="300">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Input Data</h2>
+        <div class="text-box">
+              <p> The model uses structured financial data such as:</p>
+
+            <ul>
+                <li><strong>Monthly income</strong></li>
+                <li><strong>Previous expenses</strong></li>
+                <li><strong>Number of financial transactions</strong></li>
+            </ul>
+            
+                 <p>These variables provide insight into the user’s financial behavior and spending patterns.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/input_data.png') }}" width="300">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Expected Output</h2>
+        <div class="text-box">
+            The system generates a predicted expense value, representing an estimate of future spending. This output helps users anticipate financial needs and adjust their budgets accordingly.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/output.png') }}" width="300">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Real-World Relevance</h2>
+        <div class="text-box">
+            Financial applications such as budgeting tools and banking systems use similar predictive models to provide personalized financial advice. This enables users to optimize savings, reduce unnecessary expenses, and improve overall financial planning.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/real_world.png') }}" width="300">
+        </div>
+    </div>
+
+    <div class="home-buttons">
+        <a href="{{ url_for('use_cases.menu') }}" class="btn">
+            ⬅ Back to Use Cases
+        </a>
+    </div>
 
 </div>
 

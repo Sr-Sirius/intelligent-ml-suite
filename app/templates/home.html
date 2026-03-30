@@ -4,20 +4,31 @@
 
 {% block content %}
 
-<div class="card">
+<div class="home-container">
 
-    <h1>Personal Finance ML System</h1>
+    <div class="card">
 
-    <p class="text-box">
-        This application demonstrates Machine Learning use cases
-        and a Linear Regression model for expense prediction.
-    </p>
+        <h1>Intelligent ML Suite</h1>
 
-    <a href="/use-cases/" class="btn-green">View Use Cases</a>
-    <br><br>
-    <a href="/regression/" class="btn-green">Linear Regression Module</a>
-    <br><br>
-    <a href="/regression/predict" class="btn-green">Try Prediction</a>
+        <p class="subtitle">
+            Explore Machine Learning models including regression and classification techniques.
+        </p>
+
+        <div class="text-box">
+            This platform demonstrates real-world ML applications,
+            model training, and prediction systems using Flask.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/machine_learning.png') }}" width="120">
+        </div>
+
+        <div class="home-buttons">
+            <a href="/use-cases" class="btn">Explore Use Cases</a>
+            <a href="/ml" class="btn">Supervised Learning</a>
+        </div>
+
+    </div>
 
 </div>
 

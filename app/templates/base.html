@@ -13,16 +13,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body>
+<body class="{{ theme }}"></body>
 
 <div class="container">
 
     <!-- NAVIGATION -->
-    <div class="card">
-        <a href="/">Home</a>
-        <a href="/use-cases">Use Cases</a>
-        <a href="/ml">Supervised ML</a>
+    <nav class="navbar">
+    <div class="nav-container">
+        <h2 class="logo">ML Suite</h2>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/use-cases">Use Cases</a></li>
+            <li><a href="/ml">Supervised ML</a></li>
+        </ul>
     </div>
+    </nav>
 
     {% block content %}{% endblock %}
 
