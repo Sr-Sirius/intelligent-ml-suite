@@ -203,3 +203,24 @@ body.cars .btn {
 .image-box {
     margin-top: 25px;
 }
+
+/* ===================================================
+   FORM STYLING (ML APPLICATIONS)
+=================================================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+form input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+form button {
+    margin-top: 10px;
+}

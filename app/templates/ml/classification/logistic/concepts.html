@@ -1,5 +1,166 @@
 {% extends "base.html" %}
 
+{% block title %}Logistic Regression - Concepts{% endblock %}
+
 {% block content %}
-<h1>Page working</h1>
+
+<div class="container">
+
+    <div class="card">
+        <h1>Logistic Regression - Basic Concepts</h1>
+    </div>
+
+    <!-- WHAT IS LOGISTIC REGRESSION -->
+    <div class="card">
+        <h2>What is Logistic Regression?</h2>
+        <div class="text-box">
+            <p>Logistic Regression is a supervised machine learning algorithm used for solving classification problems, particularly when the output variable is categorical. Despite its name, it is not used for regression tasks but for predicting the probability that an input belongs to a specific class.</p>
+            <p>The model applies a mathematical function called the sigmoid function, which transforms any real-valued number into a value between 0 and 1. This allows the model to interpret outputs as probabilities, making it suitable for decision-making scenarios.</p>
+            <p>Logistic Regression is widely used due to its simplicity, interpretability, and effectiveness in binary classification problems.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/logistic_intro.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- REGRESSION VS CLASSIFICATION -->
+    <div class="card">
+        <h2>Regression vs Classification</h2>
+        <div class="text-box">
+            <p>In machine learning, it is important to distinguish between regression and classification tasks.</p>
+            <p>Regression models are used to predict continuous numerical values, such as predicting house prices or temperature. In contrast, classification models are used to predict discrete categories or labels, such as whether an email is spam or not.</p>
+            <p>Logistic Regression belongs to the classification category because its objective is to assign inputs to predefined classes rather than predicting continuous outputs.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/reg_vs_class.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- BINARY CLASSIFICATION -->
+    <div class="card">
+        <h2>Binary Classification</h2>
+        <div class="text-box">
+            <p>Binary classification refers to problems where there are only two possible outcomes. These outcomes are typically represented as 0 and 1.</p>
+            <p>For example:</p>
+            <ul>
+                <li> 0 (e.g., No Fraud)</li>
+                <li> 1 (e.g., Fraud)</li>
+            </ul>
+            <p>Logistic Regression is specifically designed to handle binary classification by estimating the probability that a given input belongs to one of these two classes. Based on this probability, the model assigns the final class label.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/binary.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- TARGET VARIABLE -->
+    <div class="card">
+        <h2>Target Variable / Class Label</h2>
+        <div class="text-box">
+            <p>The target variable (also known as the class label) is the output that the model is trying to predict.</p>
+            <p>In classification problems, the target variable represents categories rather than numerical values. For example, in a fraud detection system, the target variable could be:</p>
+            <ul>
+                <li> Fraud (1) </li>
+                <li> Not Fraud (0) </li>
+            </ul>
+            <p>The model learns patterns from input data to accurately predict this target variable.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/target.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="card">
+        <h2>Features / Predictors</h2>
+        <div class="text-box">
+            <p>Features, also called predictors, are the input variables used by the model to make predictions.</p>
+            <p>These variables provide the information necessary for the model to identify patterns and relationships within the data. Features can include numerical values (such as age or income) or categorical values (such as location or product type).</p>
+            <p>The quality and relevance of features directly influence the performance of the model.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/features.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- PROBABILITY -->
+    <div class="card">
+        <h2>Probability Estimation</h2>
+        <div class="text-box">
+            <p>One of the key characteristics of Logistic Regression is that it outputs a probability value between 0 and 1.</p>
+            <p>This probability represents how likely it is that a given input belongs to a particular class. For example, a prediction of 0.85 indicates an 85% probability that the input belongs to class 1.</p>
+            <p>This probabilistic approach allows for flexible decision-making and interpretation of results.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/probability.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- DECISION BOUNDARY -->
+    <div class="card">
+        <h2>Decision Boundary</h2>
+        <div class="text-box">
+            <p>The decision boundary is the point or line that separates different classes in the feature space.</p>
+            <p>In Logistic Regression, this boundary is determined based on the predicted probabilities. It defines the threshold at which the model switches from predicting one class to another.</p>
+            <p>For example, if the decision boundary is set at 0.5, values above this threshold are classified as one class, while values below are classified as another.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/decision_boundary.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- THRESHOLD -->
+    <div class="card">
+        <h2>Classification Threshold</h2>
+        <div class="text-box">
+            <p>The classification threshold is the value used to convert predicted probabilities into class labels.</p>
+            <p>Typically, this threshold is set at 0.5:</p>
+            <ul>
+                <li> If probability more or equalt to 0.5 → Class 1 </li>
+                <li> If probability less than 0.5 → Class 0 </li>
+            </ul>
+            <p>However, this threshold can be adjusted depending on the problem. For example, in fraud detection, a lower threshold may be used to reduce the risk of missing fraudulent transactions.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/threshold.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- REAL WORLD -->
+    <div class="card">
+        <h2>Real-World Example</h2>
+        <div class="text-box">
+            <p>Logistic Regression is widely used in real-world applications where binary decisions are required.</p>
+            <p>Examples include:</p>
+            <ul>
+                <li> Fraud detection in banking systems  </li>
+                <li> Medical diagnosis (disease vs no disease)  </li>
+                <li> Spam email filtering  </li>
+                <li> Credit approval systems  </li>
+            </ul>
+            <p>Its ability to provide both predictions and probabilities makes it a powerful and interpretable tool in many industries.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/real_world_logistic.png') }}" width="300">
+        </div>
+    </div>
+
+    <!-- BACK BUTTON -->
+    <div class="home-buttons">
+        <a href="{{ url_for('main.ml_menu') }}" class="btn">
+            ⬅ Back to ML Menu
+        </a>
+    </div>
+
+</div>
+
 {% endblock %}
