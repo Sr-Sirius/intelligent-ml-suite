@@ -91,6 +91,9 @@
         {% if cm_plot %}
             <img src="data:image/png;base64,{{ cm_plot }}">
         {% endif %}
+        <p class="subtitle">
+            This visualization helps evaluate the model's classification performance.
+        </p>
     </div>
 
     <!-- METRICS -->
@@ -117,19 +120,22 @@
         {% if roc_plot %}
             <img src="data:image/png;base64,{{ roc_plot }}">
         {% endif %}
+        <p class="subtitle">
+            This visualization helps evaluate the model's classification performance.
+        </p>
     </div>
 
     <!-- INTERPRETATION -->
     <div class="card">
         <h2>Interpretation of Results</h2>
-        <div class="text-box">
-        The model demonstrates strong performance in identifying high-risk drivers, achieving an accuracy of approximately 86%. The high recall (94%) indicates that most risky drivers are correctly detected, which is critical in safety-related applications where missing a high-risk case can have serious consequences.
+        <div class="text-box">  
+        <p>The model demonstrates strong performance in identifying high-risk drivers, achieving an accuracy of approximately 86%. The high recall (94%) indicates that most risky drivers are correctly detected, which is critical in safety-related applications where missing a high-risk case can have serious consequences.</p>
 
-        The precision (89%) shows that the majority of drivers classified as high risk are indeed risky, although some false positives still occur. This reflects a reasonable trade-off between sensitivity and specificity.
+        <p>The precision (89%) shows that the majority of drivers classified as high risk are indeed risky, although some false positives still occur. This reflects a reasonable trade-off between sensitivity and specificity.</p>
 
-        The confusion matrix reveals that the model makes a small number of classification errors, which is expected in real-world scenarios where data is not perfectly separable. Additionally, the ROC curve with an AUC of 0.92 confirms that the model has a strong ability to distinguish between low-risk and high-risk drivers across different classification thresholds.
+        <p>The confusion matrix reveals that the model makes a small number of classification errors, which is expected in real-world scenarios where data is not perfectly separable. Additionally, the ROC curve with an AUC of 0.92 confirms that the model has a strong ability to distinguish between low-risk and high-risk drivers across different classification thresholds.</p>
 
-        Overall, the model provides reliable predictions and behaves realistically, making it suitable as a demonstration of logistic regression applied to driver risk assessment.
+        <p>Overall, the model provides reliable predictions and behaves realistically, making it suitable as a demonstration of logistic regression applied to driver risk assessment.</p>
         </div>
     </div>
 
