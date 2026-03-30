@@ -60,17 +60,31 @@ def evaluate_model():
     return accuracy, precision, recall, f1, y_test, y_pred
 
 def plot_confusion_matrix(y_test, y_pred):
+    import seaborn as sns
+
     cm = confusion_matrix(y_test, y_pred)
 
-    fig, ax = plt.subplots()
-    ax.matshow(cm)
+    labels = [
+        ["True Neg\n(TN)", "False Pos\n(FP)"],
+        ["False Neg\n(FN)", "True Pos\n(TP)"]
+    ]
 
-    for i in range(len(cm)):
-        for j in range(len(cm)):
-            ax.text(j, i, cm[i, j], ha='center', va='center')
+    plt.figure(figsize=(6,5))
 
-    plt.xlabel("Predicted")
-    plt.ylabel("Actual")
+    sns.heatmap(
+        cm,
+        annot=labels,
+        fmt="",
+        cmap="Blues",
+        xticklabels=["Low Risk", "High Risk"],
+        yticklabels=["Low Risk", "High Risk"]
+    )
+
+    plt.xlabel("Predicted Label")
+    plt.ylabel("Actual Label")
+    plt.title("Confusion Matrix")
+
+    plt.tight_layout()
 
     buf = io.BytesIO()
     plt.savefig(buf, format='png')
@@ -78,17 +92,24 @@ def plot_confusion_matrix(y_test, y_pred):
 
     return base64.b64encode(buf.getvalue()).decode()
 
-def plot_roc():
-    model, X_test, y_test = train_model()
-
-    y_prob = model.predict_proba(X_test)[:,1]
-
+def plot_roc(y_test, y_prob):
     fpr, tpr, _ = roc_curve(y_test, y_prob)
     roc_auc = auc(fpr, tpr)
 
-    fig, ax = plt.subplots()
-    ax.plot(fpr, tpr, label=f"AUC = {roc_auc:.2f}")
-    ax.legend()
+    plt.figure(figsize=(6,5))
+
+    plt.plot(fpr, tpr, label=f"AUC = {roc_auc:.2f}", linewidth=2)
+    plt.plot([0,1], [0,1], linestyle='--')  # random baseline
+
+    plt.xlabel("False Positive Rate")
+    plt.ylabel("True Positive Rate")
+    plt.title("ROC Curve")
+
+    plt.legend(loc="lower right")
+
+    plt.grid(alpha=0.3)
+
+    plt.tight_layout()
 
     buf = io.BytesIO()
     plt.savefig(buf, format='png')
