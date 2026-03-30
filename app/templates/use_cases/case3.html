@@ -4,54 +4,66 @@
 
 {% block content %}
 
-<div class="card">
+<div class="container">
 
-    <h1>Use Case 3: Spending Classification</h1>
-
-    <div class="text-box">
-
-        <p>
-            Spending classification helps users understand how their money is being used by categorizing expenses
-            into meaningful groups such as essential and non-essential.
-        </p>
-
-        <h3>Machine Learning Type</h3>
-        <p>Supervised Learning - Classification</p>
-
-        <h3>Input Data</h3>
-        <ul>
-            <li>Transaction description</li>
-            <li>Merchant name</li>
-            <li>Amount spent</li>
-            <li>Category labels (training data)</li>
-        </ul>
-
-        <h3>Expected Output</h3>
-        <p>
-            The model assigns a category to each expense, such as "Essential" or "Non-essential".
-        </p>
-
-        <h3>How it Works</h3>
-        <p>
-            The model is trained with labeled financial data where each transaction is associated with a category.
-            It learns patterns based on the type of purchase, frequency, and spending behavior.
-            When a new transaction is recorded, the model predicts its category automatically.
-        </p>
-
-        <h3>Real-world Importance</h3>
-        <p>
-            This allows users to track their financial habits, identify unnecessary expenses,
-            and make informed decisions to improve their financial stability.
-        </p>
-
+    <div class="card">
+        <h1>Healthcare Risk Prediction</h1>
     </div>
 
-    <div class="image-box">
-        <img src="{{ url_for('static', filename='images/spending_classification.png') }}" width="300">
+    <div class="card">
+        <h2>Problem Description</h2>
+        <div class="text-box">
+            Healthcare systems aim to identify patients at risk of developing serious conditions early. Predicting health risks allows for preventive care and better treatment outcomes.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/health_problem.png') }}" width="300">
+        </div>
     </div>
 
-    <br>
-    <a href="/use-cases/" class="btn-green">Back</a>
+    <div class="card">
+        <h2>Type of Machine Learning</h2>
+        <div class="text-box">
+            This is a supervised classification problem, where the model predicts whether a patient is at high or low risk.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/health_ml_type.png') }}" width="300">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Input Data</h2>
+        <div class="text-box">
+            The model uses patient data such as age, blood pressure, cholesterol levels, and medical history.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/health_input.png') }}" width="300">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Expected Output</h2>
+        <div class="text-box">
+            The system outputs a classification indicating whether the patient is at high or low risk of developing a condition.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/health_output.png') }}" width="300">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Real-World Relevance</h2>
+        <div class="text-box">
+            Hospitals use predictive models to improve early diagnosis and optimize treatment plans, reducing healthcare costs and improving patient outcomes.
+        </div>
+
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/health_real.png') }}" width="300">
+        </div>
+    </div>
 
 </div>
 
