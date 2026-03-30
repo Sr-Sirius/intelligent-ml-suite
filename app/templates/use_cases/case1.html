@@ -13,7 +13,7 @@
     <div class="card">
         <h2>Problem Description</h2>
         <div class="text-box">
-            Predicting personal expenses helps users manage their finances efficiently...
+            Personal financial management is a critical aspect of everyday life, yet many individuals struggle to predict their future expenses accurately. Unexpected spending patterns and poor budgeting decisions can lead to financial instability. This use case focuses on predicting future expenses based on historical financial data, helping users make informed budgeting decisions.
         </div>
 
         <div class="image-box">
@@ -24,7 +24,7 @@
     <div class="card">
         <h2>Type of Machine Learning</h2>
         <div class="text-box">
-            This use case applies supervised learning using regression techniques...
+            This problem is addressed using supervised learning, specifically a regression model. Regression is suitable because the goal is to predict a continuous numerical value (future expenses) based on input variables.
         </div>
 
         <div class="image-box">
@@ -35,7 +35,15 @@
     <div class="card">
         <h2>Input Data</h2>
         <div class="text-box">
-            Income, previous expenses, number of transactions...
+              <p> The model uses structured financial data such as:</p>
+
+            <ul>
+                <li><strong>Monthly income</strong></li>
+                <li><strong>Previous expenses</strong></li>
+                <li><strong>Number of financial transactions</strong></li>
+            </ul>
+            
+                 <p>These variables provide insight into the user’s financial behavior and spending patterns.</p>
         </div>
 
         <div class="image-box">
@@ -46,7 +54,7 @@
     <div class="card">
         <h2>Expected Output</h2>
         <div class="text-box">
-            Estimated future expenses...
+            The system generates a predicted expense value, representing an estimate of future spending. This output helps users anticipate financial needs and adjust their budgets accordingly.
         </div>
 
         <div class="image-box">
@@ -57,12 +65,18 @@
     <div class="card">
         <h2>Real-World Relevance</h2>
         <div class="text-box">
-            Financial planning apps use this type of model...
+            Financial applications such as budgeting tools and banking systems use similar predictive models to provide personalized financial advice. This enables users to optimize savings, reduce unnecessary expenses, and improve overall financial planning.
         </div>
 
         <div class="image-box">
             <img src="{{ url_for('static', filename='images/real_world.png') }}" width="300">
         </div>
+    </div>
+
+    <div class="home-buttons">
+        <a href="{{ url_for('use_cases.menu') }}" class="btn">
+            ⬅ Back to Use Cases
+        </a>
     </div>
 
 </div>

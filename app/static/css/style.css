@@ -76,6 +76,10 @@ body.cars {
     margin-bottom: 15px;
 }
 
+.card + .card {
+    margin-top: 20px;
+}
+
 /* ===================================================
    TEXT BOX (READABILITY)
 =================================================== */
@@ -90,6 +94,14 @@ body.cars {
     color: #eaffea;
 }
 
+.text-box ul {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.text-box li {
+    margin-bottom: 5px;
+}
 
 /* ===================================================
    NAVBAR
@@ -177,7 +189,7 @@ body.cars .btn {
 }
 
 .home-buttons {
-    margin-top: 25px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     gap: 20px;
