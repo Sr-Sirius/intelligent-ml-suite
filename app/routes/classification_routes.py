@@ -8,6 +8,14 @@ from app.models.classification.logistic_model import (
     train_model
 )
 
+from app.models.classification.bernoulli_nb_model import (
+    predict_risk as nb_predict,
+    evaluate_model as nb_evaluate,
+    plot_confusion_matrix as nb_cm,
+    plot_roc as nb_roc,
+    train_model as nb_train
+)
+
 classification_bp = Blueprint("classification", __name__)
 
 
@@ -77,9 +85,53 @@ def nb_concepts():
 
 
 # Naive Bayes - Application
-@classification_bp.route("/naive-bayes/application")
+@classification_bp.route("/naive-bayes/application", methods=["GET", "POST"])
 def nb_application():
+
+    prediction = None
+    probability = None
+
+    # =========================
+    #  USER INPUT
+    # =========================
+    if request.method == "POST":
+        overspeeding = int(request.form["overspeeding"])
+        night = int(request.form["night"])
+        phone = int(request.form["phone"])
+        braking = int(request.form["braking"])
+
+        prediction, probability = nb_predict(
+            overspeeding,
+            night,
+            phone,
+            braking
+        )
+
+    # =========================
+    #  MODEL EVALUATION
+    # =========================
+    model, X_test, y_test = nb_train()
+
+    y_pred = model.predict(X_test)
+    y_prob = model.predict_proba(X_test)[:, 1]
+
+    accuracy, precision, recall, f1, _, _, _ = nb_evaluate()
+
+    cm_plot = nb_cm(y_test, y_pred)
+    roc_plot = nb_roc(y_test, y_prob)
+
+    # =========================
+    #  RENDER TEMPLATE
+    # =========================
     return render_template(
         "ml/classification/naive_bayes/application.html",
+        prediction=prediction,
+        probability=probability,
+        accuracy=round(accuracy, 2),
+        precision=round(precision, 2),
+        recall=round(recall, 2),
+        f1=round(f1, 2),
+        cm_plot=cm_plot,
+        roc_plot=roc_plot,
         theme="cars"
     )
