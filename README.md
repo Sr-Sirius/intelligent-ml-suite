@@ -7,7 +7,7 @@ This is a professional Flask-based web application that demonstrates core Machin
 ##  Project Overview
 
 This project was developed as part of a Machine Learning course to showcase:
-
+![image alt](https://github.com/Sr-Sirius/intelligent-ml-suite/blob/49d492428bdcdd9276886309d967282865332ad4/screenshots/use_case_menu.png)
 - Practical implementation of supervised learning models
 - Clean and scalable Flask architecture
 - Real-world datasets and predictions
@@ -34,7 +34,7 @@ This project was developed as part of a Machine Learning course to showcase:
   - Confusion Matrix
   - ROC Curve
   - Accuracy, Precision, Recall, F1-score
-
+![image alt](https://github.com/Sr-Sirius/intelligent-ml-suite/blob/49d492428bdcdd9276886309d967282865332ad4/screenshots/logistic_regression_concepts.png)
 ---
 
 ###  Bernoulli Naive Bayes (Driver Behavior Classification)
@@ -59,6 +59,8 @@ This project was developed as part of a Machine Learning course to showcase:
 - Clean UI with theme-based design
 - Multiple ML use cases (Finance, Healthcare, Cars, Fraud Detection)
 
+![image alt](https://github.com/Sr-Sirius/intelligent-ml-suite/blob/49d492428bdcdd9276886309d967282865332ad4/screenshots/main_page.png)
+
 ---
 
 ##  Tech Stack
@@ -74,7 +76,7 @@ This project was developed as part of a Machine Learning course to showcase:
 
 ##  Project Structure
 
-
+![image alt](https://github.com/Sr-Sirius/intelligent-ml-suite/blob/49d492428bdcdd9276886309d967282865332ad4/screenshots/structure_proyect.png)
 ---
 
 ##  Installation & Setup
@@ -115,6 +117,8 @@ All classification models include:
 •	F1-score 
 •	Confusion Matrix 
 •	ROC Curve (AUC) 
+![image alt](https://github.com/Sr-Sirius/intelligent-ml-suite/blob/49d492428bdcdd9276886309d967282865332ad4/screenshots/confusion_matrix.png)
+![image alt](https://github.com/Sr-Sirius/intelligent-ml-suite/blob/49d492428bdcdd9276886309d967282865332ad4/screenshots/ROC_Curve.png)
 ________________________________________
  Git Workflow
 •	Feature multiple branches: 
