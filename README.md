@@ -96,7 +96,6 @@ ________________________________________
 4. Run the application
 python run.py
 ________________________________________
- 
  Dataset Information
 Datasets used in this project:
 •	Custom dataset (Linear Regression) 
@@ -108,7 +107,6 @@ All datasets include:
 •	Balanced classes 
 •	Noise to simulate real-world scenarios 
 ________________________________________
-
  Evaluation Metrics
 All classification models include:
 •	Accuracy 
@@ -118,7 +116,6 @@ All classification models include:
 •	Confusion Matrix 
 •	ROC Curve (AUC) 
 ________________________________________
- 
  Git Workflow
 •	Feature multiple branches: 
 o	feature/logistic-regression 
@@ -126,12 +123,10 @@ o	feature/bernoulli-naive-bayes
 •	Pull Requests used for merging 
 •	Incremental commits to demonstrate progress 
 ________________________________________
-
  Author
 Developed by:
 Mike and Brayan — Systems Engineering Students
 ________________________________________
-
  Final Notes
 This project demonstrates not only Machine Learning implementation but also:
 •	Clean code practices 
